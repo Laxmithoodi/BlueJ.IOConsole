@@ -12,13 +12,13 @@ import java.io.PrintStream;
 public class PrintLnTest {
     @Test
     public void test1() {
-        String outputString = "The quick brown fox";
+        String outputString ="The quick brown fox ";
         test(outputString);
     }
 
     @Test
     public void test2() {
-        String outputString = "The quick %s fox";
+        String outputString ="The quick %s fox";
         String[] stringArguments = {"brown"};
         test(outputString, stringArguments);
     }
@@ -52,7 +52,7 @@ public class PrintLnTest {
 
     private void test(String outputString, String... stringArguments) {
         // Given
-        String expected = String.format(outputString, stringArguments) + "\n";
+        String expected = String.format(outputString, stringArguments);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         IOConsole console = new IOConsole(System.in, new PrintStream(outputStream));
 
